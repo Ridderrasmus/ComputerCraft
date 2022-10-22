@@ -1,0 +1,2 @@
+This is a repo to use for ComputerCraft programming.
+Ideally you simply setup a small startup program on a computer and it should keep everything up to date on your turtles, your computers, and your pocket computers.
