@@ -39,4 +39,18 @@ local function wget(option, url, filename)
   end
 end
 
-wget("-f", "https://raw.githubusercontent.com/Ridderrasmus/ComputerCraft/master/Turtle/mine.lua?token=GHSAT0AAAAAABVU6BO3MO2SBEN73TDMFKHGY2UFAZA", "mine")
+-- Update current file
+wget("-f", "https://raw.githubusercontent.com/Ridderrasmus/ComputerCraft/master/startup.lua?token=GHSAT0AAAAAABVU6BO2ZJHCIUVELWK3KVRWY2VZS6A", "startup")
+
+local tArgs = {...}
+local url = tArgs[1]
+local filename = tArgs[2]
+local option = tArgs[3]
+
+if url == nil or filename == nil then
+  print("Usage: wget <url> <filename> [-f]")
+  return
+end
+wget(option, url, filename)
+
+--wget("-f", "https://raw.githubusercontent.com/Ridderrasmus/ComputerCraft/master/Turtle/mine.lua?token=GHSAT0AAAAAABVU6BO3MO2SBEN73TDMFKHGY2UFAZA", "mine")

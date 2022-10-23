@@ -84,12 +84,14 @@ while true do
         print("Enter the number of the operation you want to perform")
         local type = false
         type = tonumber(read())
-        if type == false then
+        if (type == false) or (type == nil) then
             print("Invalid input, please enter a number")
-        elseif (1 < type and type > 2) then
-            print("No such program number, please enter one of the previously mentioned programs")
         else
-            break
+            if (-1 > type and type < 3) then
+                break
+            else 
+                print("No such program number, please enter one of the previously mentioned programs")
+            end
         end
     end
 
