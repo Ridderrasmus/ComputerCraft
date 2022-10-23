@@ -82,22 +82,23 @@ while true do
         print("1. Stairs")
         print("2. 3x3 Strip tunnel")
         print("Enter the number of the operation you want to perform")
-        local type = false
-        type = tonumber(read())
-        if (type == false) or (type == nil) then
+        selection = false
+        selection = tonumber(read())
+        print(selection)
+        if (selection == false) or (selection == nil) then
             print("Invalid input, please enter a number")
         else
-            if (-1 > type and type < 3) then
+            if (-1 > selection and selection < 3) then
                 break
             else 
                 print("No such program number, please enter one of the previously mentioned programs")
             end
         end
     end
-
-    if type == 0 then
+    print(selection)
+    if selection == 0 then
         break
-    elseif type == 1 then
+    elseif selection == 1 then
         while true do
             term.clear()
             print("Stairs selected.")
@@ -112,7 +113,7 @@ while true do
         end
         stairs(length)
         print("Stairs complete")
-    elseif type == 2 then
+    elseif selection == 2 then
         while true do
             term.clear()
             print("3x3 Strip mine selected.")
@@ -128,7 +129,7 @@ while true do
         strip(length)
         print("Strip mine complete")
     else 
-        print("Invalid type")
+        print("Invalid selection")
     end
     sleep(5)
     term.clear()
