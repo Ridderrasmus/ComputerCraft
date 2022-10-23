@@ -84,18 +84,16 @@ while true do
         print("Enter the number of the operation you want to perform")
         selection = false
         selection = tonumber(read())
-        print(selection)
         if (selection == false) or (selection == nil) then
             print("Invalid input, please enter a number")
         else
-            if (-1 > selection and selection < 3) then
+            if ((-1 < selection) and (selection < 3)) then
                 break
             else 
                 print("No such program number, please enter one of the previously mentioned programs")
             end
         end
     end
-    print(selection)
     if selection == 0 then
         break
     elseif selection == 1 then
