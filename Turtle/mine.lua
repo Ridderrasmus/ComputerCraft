@@ -77,6 +77,7 @@ end
 while true do
     while true do
         term.clear()
+        term.setCursorPos(0,0)
         print("Tunnel Digging Program")
         print("0. Terminate program")
         print("1. Stairs")
@@ -99,11 +100,12 @@ while true do
     elseif selection == 1 then
         while true do
             term.clear()
+            term.setCursorPos(0,0)
             print("Stairs selected.")
             print("Enter the number of steps you want to dig")
-            local length = false
+            length = false
             length = tonumber(read())
-            if length == false then
+            if (length == false) or (length == nil) then
                 print("Invalid input, please enter a number")
             else
                 break
@@ -114,11 +116,12 @@ while true do
     elseif selection == 2 then
         while true do
             term.clear()
+            term.setCursorPos(0,0)
             print("3x3 Strip mine selected.")
             print("Enter the number of length of tunnel you want to dig")
-            local length = false
+            length = false
             length = tonumber(read())
-            if length == false then
+            if (length == false) or (length == nil) then
                 print("Invalid input, please enter a number")
             else
                 break
