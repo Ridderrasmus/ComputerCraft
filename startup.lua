@@ -40,8 +40,8 @@ local function wget(option, url, filename)
 end
 
 -- Update current file
-wget("-f", "https://raw.githubusercontent.com/Ridderrasmus/ComputerCraft/master/startup.lua?token=GHSAT0AAAAAABVU6BO2ZJHCIUVELWK3KVRWY2VZS6A", "startup")
-wget("-f", "https://raw.githubusercontent.com/Ridderrasmus/ComputerCraft/master/Turtle/mine.lua?token=GHSAT0AAAAAABVU6BO3MO2SBEN73TDMFKHGY2UFAZA", "mine")
+wget("-f", "https://raw.githubusercontent.com/Ridderrasmus/ComputerCraft/master/startup.lua", "startup")
+wget("-f", "https://raw.githubusercontent.com/Ridderrasmus/ComputerCraft/master/Turtle/mine.lua", "mine")
 
 local tArgs = {...}
 local url = tArgs[1]
