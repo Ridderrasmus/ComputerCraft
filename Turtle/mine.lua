@@ -73,6 +73,7 @@ local function dig5x5()
     dig1x5()
     dig1x5(true)
     turtle.back()
+    turtle.turnLeft()
 end
 
 -- Main Function Loops
