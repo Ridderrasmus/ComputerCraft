@@ -45,6 +45,36 @@ local function dig3x3()
     turtle.turnLeft()
 end
 
+local function dig1x5(ret)
+    ret = ret or false
+    dig()
+    turtle.forward()
+    digUp()
+    digDown()
+    turtle.up()
+    digUp()
+    turtle.up()
+    digUp()
+    turtle.down()
+    turtle.down()
+    if ret then
+        turtle.back()
+    end
+end
+
+local function dig5x5()
+    dig1x5()
+    turtle.turnLeft()
+    dig1x5()
+    dig1x5(true)
+    turtle.back()
+    turtle.turnRight()
+    turtle.turnRight()
+    dig1x5()
+    dig1x5(true)
+    turtle.back()
+end
+
 -- Main Function Loops
 
 local function stairs(len)
@@ -69,6 +99,18 @@ local function strip(len)
 
     for i = 1, len do
         dig3x3()
+    end
+end
+
+local function strip5x5(len)
+    -- 5x5 strip mining loop
+    -- TODO: count steps and return to start when done, stuck, or out of fuel
+    -- TODO: check for lava and deal with it
+    
+    len = len or 0
+
+    for i = 1, len do
+        dig5x5()
     end
 end
 
@@ -119,14 +161,15 @@ while true do
         print("0. Terminate program")
         print("1. Stairs")
         print("2. 3x3 Strip tunnel")
-        print("3. 3x3 Vertical tunnel")
+        print("3. 5x5 Strip tunnel")
+        print("4. 3x3 Vertical tunnel")
         print("Enter the number of the operation you want to perform")
         selection = false
         selection = tonumber(read())
         if (selection == false) or (selection == nil) then
             print("Invalid input, please enter a number")
         else
-            if ((-1 < selection) and (selection < 4)) then
+            if ((-1 < selection) and (selection < 5)) then
                 break
             else 
                 print("No such program number, please enter one of the previously mentioned programs")
@@ -168,6 +211,22 @@ while true do
         strip(length)
         print("Strip mine complete")
     elseif selection == 3 then
+        while true do
+            term.clear()
+            term.setCursorPos(0,0)
+            print("5x5 Strip mine selected.")
+            print("Enter the number of length of tunnel you want to dig")
+            length = false
+            length = tonumber(read())
+            if (length == false) or (length == nil) then
+                print("Invalid input, please enter a number")
+            else
+                break
+            end
+        end
+        strip5x5(length)
+        print("Strip mine complete")
+    elseif selection == 4 then
         while true do
             term.clear()
             term.setCursorPos(0,0)
