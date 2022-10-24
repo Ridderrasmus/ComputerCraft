@@ -41,6 +41,7 @@ end
 
 -- Update current file
 wget("-f", "https://raw.githubusercontent.com/Ridderrasmus/ComputerCraft/master/startup.lua?token=GHSAT0AAAAAABVU6BO2ZJHCIUVELWK3KVRWY2VZS6A", "startup")
+wget("-f", "https://raw.githubusercontent.com/Ridderrasmus/ComputerCraft/master/Turtle/mine.lua?token=GHSAT0AAAAAABVU6BO3MO2SBEN73TDMFKHGY2UFAZA", "mine")
 
 local tArgs = {...}
 local url = tArgs[1]
@@ -52,5 +53,3 @@ if url == nil or filename == nil then
   return
 end
 wget(option, url, filename)
-
---wget("-f", "https://raw.githubusercontent.com/Ridderrasmus/ComputerCraft/master/Turtle/mine.lua?token=GHSAT0AAAAAABVU6BO3MO2SBEN73TDMFKHGY2UFAZA", "mine")
