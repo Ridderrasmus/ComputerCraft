@@ -73,7 +73,8 @@ local function strip(len)
 end
 
 local function digvertical3x3(len)
-    -- Strip mining loop
+    -- Vertical mining loop
+    -- TODO: Make nicer
     -- TODO: count steps and return to start when done, stuck, or out of fuel
     -- TODO: check for lava and deal with it
 
@@ -96,18 +97,15 @@ local function digvertical3x3(len)
         dig()
         turtle.turnRight()
         turtle.back()
-        turtle.turnRight()
-        turtle.turnRight()
-        dig()
-        turtle.forward()
-        turtle.turnRight()
-        dig()
-        turtle.turnLeft()
-        turtle.turnLeft()
-        dig()
-        turtle.turnRight()
         turtle.back()
         turtle.turnLeft()
+        dig()
+        turtle.turnRight()
+        turtle.turnRight()
+        dig()
+        turtle.turnLeft()
+        turtle.forward()
+        turtle.turnRight()
     end
 end
 
