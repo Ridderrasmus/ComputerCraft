@@ -3,6 +3,57 @@
 -- TODO: Add a menu system to select what to do to avoid having to use arguments
 
 -- Functions
+
+local function moveForward(distance)
+    distance = distance or 1
+    for i = 1, distance do
+        while not turtle.forward() do
+            Print("Blocked movement")
+        end
+    end
+end
+
+local function moveBack(distance)
+    distance = distance or 1
+    for i = 1, distance do
+        while not turtle.back() do
+            Print("Blocked movement")
+        end
+    end
+end
+
+local function moveUp(distance)
+    distance = distance or 1
+    for i = 1, distance do
+        while not turtle.up() do
+            Print("Blocked movement")
+        end
+    end
+end
+
+local function moveDown(distance)
+    distance = distance or 1
+    for i = 1, distance do
+        while not turtle.down() do
+            Print("Blocked movement")
+        end
+    end
+end
+
+local function turnLeft(rounds)
+    rounds = rounds or 1
+    for i = 1, rounds do
+        turtle.turnLeft()
+    end
+end
+
+local function turnRight(rounds)
+    rounds = rounds or 1
+    for i = 1, rounds do
+        turtle.turnRight()
+    end
+end
+
 local function dig()
     while turtle.detect() do
         turtle.dig()
@@ -27,53 +78,50 @@ end
 local function dig1x3(ret)
     ret = ret or false
     dig()
-    turtle.forward()
+    moveForward()
     digUp()
     digDown()
     if ret then
-        turtle.back()
+        moveBack()
     end
 end 
 
 local function dig3x3()
     dig1x3()
-    turtle.turnLeft()
+    turnLeft()
     dig1x3(true)
-    turtle.turnRight()
-    turtle.turnRight()
+    turnRight(2)
     dig1x3(true)
-    turtle.turnLeft()
+    turnLeft()
 end
 
 local function dig1x5(ret)
     ret = ret or false
     dig()
-    turtle.forward()
+    moveForward()
     digUp()
     digDown()
-    turtle.up()
+    moveUp()
     digUp()
-    turtle.up()
+    moveUp()
     digUp()
-    turtle.down()
-    turtle.down()
+    moveDown(2)
     if ret then
-        turtle.back()
+        moveBack()
     end
 end
 
 local function dig5x5()
     dig1x5()
-    turtle.turnLeft()
+    turnLeft()
     dig1x5()
     dig1x5(true)
-    turtle.back()
-    turtle.turnRight()
-    turtle.turnRight()
+    moveBack()
+    turnRight(2)
     dig1x5()
     dig1x5(true)
-    turtle.back()
-    turtle.turnLeft()
+    moveBack()
+    turnLeft()
 end
 
 -- Main Function Loops
@@ -87,7 +135,7 @@ local function stairs(len)
 
     for i = 1, len do
         dig1x3()
-        turtle.down()
+        moveDown()
     end
 end
 
@@ -125,30 +173,26 @@ local function digvertical3x3(len)
 
     for i = 1, len do
         digDown()
-        turtle.down()
+        moveDown()
         dig()
-        turtle.turnLeft()
-        turtle.turnLeft()
+        turnLeft(2)
         dig()
-        turtle.turnRight()
+        turnRight()
         dig()
-        turtle.forward()
-        turtle.turnRight()
+        moveForward()
+        turnRight()
         dig()
-        turtle.turnLeft()
-        turtle.turnLeft()
+        turnLeft(2)
         dig()
-        turtle.turnRight()
-        turtle.back()
-        turtle.back()
-        turtle.turnLeft()
+        turnRight()
+        moveBack(2)
+        turnLeft()
         dig()
-        turtle.turnRight()
-        turtle.turnRight()
+        turnRight(2)
         dig()
-        turtle.turnLeft()
-        turtle.forward()
-        turtle.turnRight()
+        turnLeft()
+        moveForward()
+        turnRight()
     end
 end
 
