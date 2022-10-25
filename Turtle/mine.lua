@@ -8,7 +8,7 @@ local function moveForward(distance)
     distance = distance or 1
     for i = 1, distance do
         while not turtle.forward() do
-            Print("Blocked movement")
+            print("Blocked movement")
         end
     end
 end
@@ -17,7 +17,7 @@ local function moveBack(distance)
     distance = distance or 1
     for i = 1, distance do
         while not turtle.back() do
-            Print("Blocked movement")
+            print("Blocked movement")
         end
     end
 end
@@ -26,7 +26,7 @@ local function moveUp(distance)
     distance = distance or 1
     for i = 1, distance do
         while not turtle.up() do
-            Print("Blocked movement")
+            print("Blocked movement")
         end
     end
 end
@@ -35,7 +35,7 @@ local function moveDown(distance)
     distance = distance or 1
     for i = 1, distance do
         while not turtle.down() do
-            Print("Blocked movement")
+            print("Blocked movement")
         end
     end
 end
