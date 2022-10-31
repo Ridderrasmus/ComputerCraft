@@ -74,7 +74,7 @@ local function dumpInventory()
     turtle.place()
     for i = 1, 16 do
         turtle.select(i)
-        turtle.dropUp()
+        turtle.drop()
     end
     if not replacementChest then
         turtle.dig()
