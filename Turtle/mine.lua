@@ -52,6 +52,7 @@ local function dumpInventory()
                 break
             end
         end
+        if not loop then break end
         for i = 1, 16 do
             local itemName = turtle.getItemDetail(i)["name"]
             if string.find(itemName, "chest") then
