@@ -88,6 +88,7 @@ local function updateCheck()
     if isInventoryFull() then
         dumpInventory()
     end
+    turtle.select(1)
 end
 
 local function moveForward(distance)
